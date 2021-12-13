@@ -4,7 +4,9 @@ package ru.netology;
 import com.github.javafaker.Faker;
 import lombok.SneakyThrows;
 
+import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
 
 import java.sql.DriverManager;
 import java.time.Duration;
@@ -16,6 +18,12 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
 public class Forms {
+
+    @AfterAll
+
+    public static void deleteInfo() {
+    DataHelper help = new DataHelper();
+    help.deleteInfo();}
 
 
         @Test
