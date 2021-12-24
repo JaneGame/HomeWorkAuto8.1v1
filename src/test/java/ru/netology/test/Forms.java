@@ -1,6 +1,7 @@
 package ru.netology.test;
 
 
+import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Test;
 import ru.netology.data.DataHelper;
 import ru.netology.page.Login;
@@ -13,11 +14,11 @@ import static com.codeborne.selenide.Selenide.open;
 
 public class Forms {
 
-//    @AfterAll
-//
-//    public static void deleteInfo() {
-//    DataHelper help = new DataHelper();
-//    help.deleteInfo();}
+    @AfterAll
+
+    public static void deleteInfo() {
+    DataHelper help = new DataHelper();
+    help.deleteInfo();}
 
 
         @Test
@@ -39,7 +40,7 @@ public class Forms {
         login.invalidLogin(authInfo);
         login.invalidLogin(authInfo);
         login.invalidLogin(authInfo);
-        $(withText("Пользователь заблокирован")).shouldBe(hidden);
+        $(withText("Пользователь заблокирован")).shouldBe(visible);
 
 
     }
