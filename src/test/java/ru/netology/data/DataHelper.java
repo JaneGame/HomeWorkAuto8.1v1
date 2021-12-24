@@ -1,4 +1,4 @@
-package ru.netology;
+package ru.netology.data;
 
 import lombok.SneakyThrows;
 import lombok.Value;
@@ -13,11 +13,7 @@ import java.sql.SQLException;
 public class DataHelper {
 
 
-    @Value
-    public static class VerificationCode {
 
-        private String code;
-    }
 
         @SneakyThrows
         public static VerificationCode getValidVerificationCode() {
@@ -49,6 +45,27 @@ public class DataHelper {
             runner.update(conn, deleteUserd);
         }
 
-    }}
+    }
+
+    public static AuthInfo getAuthInfo() {
+        return new AuthInfo("vasya", "qwerty123");
+    }
+
+    public static AuthInfo getErrorAuthInfo() {
+        return new AuthInfo("vasya", "qwerty");
+    }
+
+    @Value
+    public static class AuthInfo {
+        String login;
+        String password;
+    }
+
+    @Value
+    public static class VerificationCode {
+        String code;
+    }
+
+}
 
 
