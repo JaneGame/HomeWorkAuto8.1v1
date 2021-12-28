@@ -15,10 +15,11 @@ import static com.codeborne.selenide.Selenide.open;
 
 public class Forms {
 
-    //@AfterAll
+    @AfterAll
 
-//    public static void deleteInfo() {
-//    DataHelper.deleteInfo();}
+    public static void deleteInfo() {
+        DataHelper.deleteInfo();
+    }
 
 
     @Test
